@@ -1,29 +1,35 @@
 package Backend;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 
-public class ArticulosDao implements Dao{
-    private List<Articulos> articulos = new ArrayList<>();
+public class ArticulosDao implements Dao<Articulos>{
+    private List<Articulos> listaArticulos;
 
     public ArticulosDao() {
-        articulos.add(new Articulos(123456, "Papel", 10.0, 200));
-        articulos.add(new Articulos(234567, "Lápiz", 15.0, 100));
-    }
-    public List<Articulos> getArticulos() {
-        return articulos;
-    }
+        listaArticulos.add(new Articulos(12345, "Goma", 5.0, 100));
+        listaArticulos.add(new Articulos(23456, "Cuaderno", 50.0, 100));
 
-    @Override
-    public void guardar(Articulos articulo) {
-        articulos.add(articulos);
     }
     @Override
-    public void borrar(Articulos articulo) {
-        articulos.remove(articulo);
+    public Optional<Articulos> get(long id) {
+        return Optional.empty();
     }
     @Override
-    public void actualizar(Articulos articulo) {
-        articulos.set((int) articulo.getId(), articulo);
+    public List<Articulos> obtenerTodos() {
+        return List.of();
+    }
+    @Override
+    public void guardar(Articulos articulos) {
+
+    }
+    @Override
+    public void actualizar(Articulos articulos, String[] params) {
+
+    }
+    @Override
+    public void borrar(Articulos articulos) {
+
     }
 }
